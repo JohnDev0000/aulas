@@ -1,5 +1,8 @@
 import entities.Client;
 import entities.Order;
+import entities.OrderItem;
+import entities.Product;
+import entities.enums.OrderStatus;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,7 +16,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws ParseException {
 
-        Order order = new Order();
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
@@ -28,6 +30,37 @@ public class Main {
         System.out.print("Birth date (DD/MM/YYYY): ");
         Date birthDate = sdf.parse(sc.next());
         Client client = new Client(name, email, birthDate);
+        System.out.println("Enter order data:");
+        System.out.print("Status: ");
+        OrderStatus status = OrderStatus.valueOf(sc.next()); // converte o string para o valor correspontente
+
+        Order order = new Order(new Date(), status, client);
+
+        System.out.print("How many items to this order? ");
+        int items = sc.nextInt();
+
+        for (int i = 1; i <= items; i++) {
+            System.out.println("Enter #" + i + " item data:");
+            System.out.print("Product name: ");
+            sc.nextLine();
+            String pName = sc.nextLine();
+            System.out.print("Product Price: ");
+            double pPrice = sc.nextDouble();
+
+            Product product = new Product(pName, pPrice);
+
+            System.out.print("Quantity: ");
+            int quantity = sc.nextInt();
+
+            OrderItem orderItem = new OrderItem(quantity, pPrice, product);
+
+            order.addItem(orderItem);
+        }
+
+        System.out.println();
+        System.out.println("ORDER SUMMARY:");
+        System.out.println(order);
+
 
         sc.close();
     }
