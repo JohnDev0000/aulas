@@ -69,4 +69,14 @@ public class Order {
         }
         return sum;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "moment=" + moment +
+                ", status=" + status +
+                ", items=" + items +
+                ", client=" + client +
+                '}';
+    }
 }
