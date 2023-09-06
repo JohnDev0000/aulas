@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class HeranPoli {
+public class CompEnum {
     public static void main(String[] args) throws ParseException {
 
         Locale.setDefault(Locale.US);
