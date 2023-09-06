@@ -1,6 +1,6 @@
-package entities;
+package Composicao_Enum.entities;
 
-import entities.enums.OrderStatus;
+import Composicao_Enum.entities.enums.OrderStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public class Order {
-
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private Date moment;
     private OrderStatus status;

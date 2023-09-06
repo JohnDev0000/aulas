@@ -1,7 +1,6 @@
-package entities;
+package Composicao_Enum.entities;
 
 public class Product {
-
     private String name;
     private Double price;
 

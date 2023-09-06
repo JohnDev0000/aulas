@@ -1,10 +1,9 @@
-package entities;
+package Composicao_Enum.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
-
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     private String name;
