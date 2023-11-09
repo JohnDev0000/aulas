@@ -2,13 +2,14 @@ package FuncProg_Lambda.entities;
 
 public class Product {
     private String name;
+    private String email;
     private Double price;
 
-    public Product(String name, Double price) {
+    public Product(String name, String email, Double price) {
         this.name = name;
+        this.email = email;
         this.price = price;
     }
-
     public String getName() {
         return name;
     }
@@ -23,6 +24,14 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public static String staticUpperCaseName(Product p) {
